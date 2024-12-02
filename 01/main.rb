@@ -6,7 +6,7 @@ lists    = List.import_both(DATA)
 comparer = Comparer.new(lists.first, lists.last)
 
 puts "The total distance between the lists is: #{comparer.distances.sum}"
-# puts part_two
+puts "The similarity score of the lists is: #{comparer.similarities.sum}"
 
 __END__
 56208   95668

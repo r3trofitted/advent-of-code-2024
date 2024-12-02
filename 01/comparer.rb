@@ -5,7 +5,12 @@ class Comparer
 
   def distances
     @list_a
-      .zip(@list_b)
+      .sort
+      .zip(@list_b.sort)
       .map { |a, b| (a - b).abs }
+  end
+
+  def similarities
+    @list_a.map { |i| i * @list_b.count(i) }
   end
 end

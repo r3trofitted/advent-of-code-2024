@@ -4,7 +4,7 @@ class List
   include Enumerable
   extend Forwardable
 
-  def_delegator :@values, :each
+  def_delegators :@values, :each, :to_h
 
   def self.import_both(data)
     data
@@ -15,6 +15,6 @@ class List
   end
 
   def initialize(*values_or_array_or_values)
-    @values = Array(values_or_array_or_values).flatten.map(&:to_i).sort
+    @values = Array(values_or_array_or_values).flatten.map(&:to_i)
   end
 end
